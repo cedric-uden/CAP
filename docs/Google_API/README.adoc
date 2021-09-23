@@ -1,0 +1,672 @@
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+:icons: font
+
+:imagesdir: ./media
+
+
+:toc:
+
+= Google API setup documentation
+
+
+// ---------------------------
+
+== Configure Google backend
+
+Head over to https://console.cloud.google.com/
+
+Log in with the YouTube account *which uploads the sermons*.
+
+
+=== Create project
+
+// ---------------------------
+
+
++++ <details><summary> +++
+Create a new project
++++ </summary><div> +++
+
+image::01-create_project.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Name the project and create it
++++ </summary><div> +++
+
+image::02-name_project.png[]
++++ </div></details> +++
+
+// ---------------------------
+
+_You should now be greeted by the project dashboard._
+
+// ---------------------------
+// ---------------------------
+
+
+=== Activate the 'YouTube Data API'
+
++++ <details><summary> +++
+Go to the sidebar menu
++++ </summary><div> +++
+
+image::03-go_to_sidebar_menu.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Open APIs and Services
++++ </summary><div> +++
+
+image::04-go_to_APIs_and_services.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Head over to 'Activate APIs and Services'
++++ </summary><div> +++
+
+image::05-go_to_activate_API_and_services.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Search for 'youtube' and hit enter.
++++ </summary><div> +++
+
+image::06-search_for_youtube.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Select the 'YouTube Data API'
++++ </summary><div> +++
+
+image::07-select_youtube_data_API.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Activate it
++++ </summary><div> +++
+
+image::08-activate_youtube_data_API.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Head back to APIs and Services
++++ </summary><div> +++
+
+image::09-head_back_to_APIs_and_services.png[]
++++ </div></details> +++
+
+// ---------------------------
+
+=== Configure OAuth activation screen
+
+// ---------------------------
+
++++ <details><summary> +++
+Go to 'OAuth Activation Screen' on the left
++++ </summary><div> +++
+
+image::10-oauth_activation_screen.png[]
++++ </div></details> +++
+
+
+// ---------------------------
+
++++ <details><summary> +++
+Select 'extern'
++++ </summary><div> +++
+
+image::11-select_extern.png[]
++++ </div></details> +++
+
+
+// ---------------------------
+
++++ <details><summary> +++
+Enter the details
++++ </summary><div> +++
+
+image::12-enter_details_pt1.png[]
+image::13-enter_details_pt2.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Skip restrict sections
++++ </summary><div> +++
+
+image::14-skip_sections.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Add a test user
++++ </summary><div> +++
+
+image::15-add_test_user.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Enter a Google account as a test user
++++ </summary><div> +++
+
+WARNING: Confirm twice for whatever reason.
+
+image::16-enter_google_account_and_confirm_twice.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Save the created test user
++++ </summary><div> +++
+
+image::17-save_test_users.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+And back to the Dashboard
++++ </summary><div> +++
+
+image::18-back_to_dashboard.png[]
++++ </div></details> +++
+
+// ---------------------------
+
+=== Create credentials
+
+==== Create API key
+
+// ---------------------------
+
++++ <details><summary> +++
+Head to credentials
++++ </summary><div> +++
+
+image::19-go_to_credentials.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Add credentials
++++ </summary><div> +++
+
+image::20-add_credentials.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Add an API key
++++ </summary><div> +++
+
+image::21-add_API_key.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Set the API key permissions
++++ </summary><div> +++
+
+image::22-set_API_key_permissions.png[]
++++ </div></details> +++
+
+
+// ---------------------------
+
++++ <details><summary> +++
+Set restrictions for the key
++++ </summary><div> +++
+
+image::23-restrict_the_key.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Select the YouTube Data API
++++ </summary><div> +++
+
+image::24-select_youtube_API.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Store the API key and save the API restrictions
++++ </summary><div> +++
+
+image::25-save_API_restrictions.png[]
++++ </div></details> +++
+
+// ---------------------------
+==== Add OAuth Client ID
+// ---------------------------
+
++++ <details><summary> +++
+Add credentials
++++ </summary><div> +++
+
+image::20-add_credentials.png[]
++++ </div></details> +++
+
++++ <details><summary> +++
+Add OAuth-Client-ID
++++ </summary><div> +++
+
+image::26-add_oauth_client_ID.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Configure OAuth-Client-ID
++++ </summary><div> +++
+
+image::27-configure_oauth_client_ID.png[]
++++ </div></details> +++
+
+
+// ---------------------------
+
++++ <details><summary> +++
+Store both credentials as they will be needed later on
++++ </summary><div> +++
+
+image::28-copy_credentials.png[]
++++ </div></details> +++
+
+// ---------------------------
+
+== Get access & refresh token
+
+The official Google documentation is found https://developers.google.com/identity/protocols/oauth2/web-server#httprest_1[here]. Additionally, https://www.youtube.com/watch?v=tGDn3V-mIOM[this] video was used for help.
+
+// ---------------------------
+
+=== Create initial request
+
+```
+https://accounts.google.com/o/oauth2/v2/auth?
+scope=https%3A//www.googleapis.com/auth/youtube.readonly&
+access_type=offline&
+include_granted_scopes=true&
+response_type=code&state=state_parameter_passthrough_value&
+redirect_uri=http%3A//localhost&
+client_id=<ENTER_CLIENT_ID_HERE>
+```
+
+WARNING: Update the Client ID String `<ENTER_CLIENT_ID_HERE>` with the `client_id` received in <<_add_oauth_client_id,the section 'Add OAuth Client ID'>>
+
+NOTE: Copy-Pasting the above URL works depending on the browser. If it is not working, pay attention to potential whitespaces added due to the line breaks.
+
+TIP: The `scope` for this application is set to `youtube.readonly` and can be found in the respective documentation guides on Google dev console.
+
+==== Navigate through authentication
+
+Paste the above request with updated values into a browser window.
+
+// ---------------------------
+
++++ <details><summary> +++
+Log in with your test user from section <<_configure_oauth_activation_screen, Configure OAuth activation screen>>
++++ </summary><div> +++
+
+image::29-login_with_test_user.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Skip the warning that Google has not validated the app
++++ </summary><div> +++
+
+image::30-not_validated_by_google.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Allow access
++++ </summary><div> +++
+
+image::31-allow_access.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Now, OAuth is redirecting to a non-existent URL. This is expected.
++++ </summary><div> +++
+
+image::32-website_not_found.png[]
++++ </div></details> +++
+
+// ---------------------------
+
++++ <details><summary> +++
+Store the URL which got redirected to
++++ </summary><div> +++
+
+image::33-copy_the_URL.png[]
++++ </div></details> +++
+
+==== Retrieve code
+
+The URL which got redirected to should look something like this:
+
+```
+http://localhost/?
+state=state_parameter_passthrough_value&
+code=4/0AX4XfWilZNtwJ1P_rVBLg6oRbzwim7LudOUZzIy7Cgw1YGyVy3pxGiS3QpnvcvAw3kVcVA&
+scope=https://www.googleapis.com/auth/youtube.readonly
+```
+
+Now, note down the code:
+
+```
+4/0AX4XfWilZNtwJ1P_rVBLg6oRbzwim7LudOUZzIy7Cgw1YGyVy3pxGiS3QpnvcvAw3kVcVA
+```
+
+=== Make a POST request using curl to retrieve the final tokens
+
+```bash
+curl \
+--request POST \
+--data "code=<ENTER_ABOVE_CODE>&\
+client_id=<ENTER_CLIENT_ID>&\
+client_secret=<ENTER_CLIENT_SECRET>&\
+redirect_uri=http%3A//localhost&\
+grant_type=authorization_code" \
+https://accounts.google.com/o/oauth2/token
+```
+
+TIP: `client_id` and `client_secret` are both found <<_add_oauth_client_id,in section 'Add OAuth Client ID'>>
+
+This should be the response:
+```json
+{
+  "access_token": "ya29.a0ARrdaM9fClgsNcGUNjdt58_y7CaYFvzDZ55obyhOIcV0t-vRgtPWtz6pX-YD1KBQ1W6hnaeSdcQbU35sDSuhBa5lMeaE4FkO-yxuI3i_axeAtPjr6VqT647SGKfKyNCYwxMcUvSClpQbL6iR5wVyrI-sDdD_",
+  "expires_in": 3599,
+  "refresh_token": "1//094ekCbwD6wWqCgYIARAAGAkSNwF-L9IrQXFJ-AFDa44Zw0IOIFCxZsPYQ_AlqMkcmavz3OkuDZ7KKb95n5OyM7YXLl9K47G1IS4",
+  "scope": "https://www.googleapis.com/auth/youtube.readonly",
+  "token_type": "Bearer"
+}
+```
+
+Now, note down the `refresh_token`.
+
+NOTE: We now received our first `access_token`, they are always valid for one hour at a time
+
+=== Get a new access_token
+
+Now that we have the `refresh_token`, we can use it to generate a new `access_token`.
+
+```
+curl \
+--request POST \
+--data "client_id=<ENTER_CLIENT_ID>&\
+client_secret=<ENTER_CLIENT_SECRET>&\
+refresh_token=<ENTER_REFRESH_TOKEN>&\
+grant_type=refresh_token" \
+https://accounts.google.com/o/oauth2/token
+```
+
++++ <details><summary> +++
+_View the expected output_
++++ </summary><div> +++
+```json
+{
+  "access_token": "ya29.a0ARrdaM9QkjEwJK00Z5SgdbjioU89xkY-FDNWG6P4_ol7yFIOYQrnlZYId9nhzC11LdKFMmQwkrrmFSA9ZivE_v2snN45PMZ_wG2ZzfFKOD3D_mbVQnBD0eXYGBNHfcuVD20RDQ5rF-Hylv2E2ob8dAXfNefH",
+  "expires_in": 3599,
+  "scope": "https://www.googleapis.com/auth/youtube.readonly",
+  "token_type": "Bearer"
+}
+```
++++ </div></details> +++
+
+== Test the query using access_token
+
+
+```bash
+curl \
+  'https://youtube.googleapis.com/youtube/v3/activities?part=contentDetails&part=id&part=snippet&mine=true&key=<ENTER_API_KEY>' \
+  --header 'Authorization: Bearer <ENTER_ACCESS_TOKEN>' \
+  --header 'Accept: application/json' \
+  --compressed
+```
+
+NOTE: Now we need the API Key <<_create_api_key, from section create API key>>
+
+
+
++++ <details><summary> +++
+_View the expected output_
++++ </summary><div> +++
+```json
+{
+  "kind": "youtube#activityListResponse",
+  "etag": "lMiyc5IR6uAMR2nF6387L0j6vBU",
+  "items": [
+    {
+      "kind": "youtube#activity",
+      "etag": "8IHBY99H1Ui8XEgfM1AZkdPUk0I",
+      "id": "MTUxNjMyMTMzMjgxMTYzMjEzMzI4MTAwMDA1NA",
+      "snippet": {
+        "publishedAt": "2021-09-20T10:21:21+00:00",
+        "channelId": "UCNshqh-axwENmUmHITY1stA",
+        "title": "Den Kampf im Kopf  gewinnen - Freiheit im Kopf - Henning Krockow",
+        "description": "Das Leben ist oft ein Kampf, aber wo genau findet dieser statt? Die meisten Schlachten werden in unserem Kopf geschlagen! In dieser Serie geht es darum, einen gesunden und gewinnbringenden Weg zu finden, mit den eigenen Gedanken und Gefühlen umzugehen. Es ist Zeit unser Denken zu erneuern, damit Gott unser Leben verändern kann.\n\nPredigt vom 19.9.2021 Freiheit im Kopf| Henning Krockow\n\nMehr Infos über ICF Karlsruhe unter: \nhttps://www.icf-karlsruhe.de",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/o2AagtlRFoE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/o2AagtlRFoE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/o2AagtlRFoE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/o2AagtlRFoE/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/o2AagtlRFoE/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "ICF Karlsruhe",
+        "type": "upload",
+        "groupId": "MTUxNjMyMTMzMjgxMTYzMjEzMzI4MTAwMDA1NA"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "o2AagtlRFoE"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "phnsjbU8zyzRWRzXHiVfNsF0MWQ",
+      "id": "MTUxNjMxNTA5MjEyMTYzMTUwOTIxMjAwMDI5NQ",
+      "snippet": {
+        "publishedAt": "2021-09-13T05:00:12+00:00",
+        "channelId": "UCNshqh-axwENmUmHITY1stA",
+        "title": "Den Kampf im Kopf gewinnen - Besser fühlen - Sibylle und Steffen Beck",
+        "description": "Das Leben ist oft ein Kampf, aber wo genau findet dieser statt? Die meisten Schlachten werden in unserem Kopf geschlagen! In dieser Serie geht es darum, einen gesunden und gewinnbringenden Weg zu finden, mit den eigenen Gedanken und Gefühlen umzugehen. Es ist Zeit unser Denken zu erneuern, damit Gott unser Leben verändern kann.\n\nPredigt vom 12.9.2021 Besser fühlen| Steffen und Sibylle Beck\n\nMehr Infos über ICF Karlsruhe unter: \nhttps://www.icf-karlsruhe.de",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/k8eoGwRUTcs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/k8eoGwRUTcs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/k8eoGwRUTcs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/k8eoGwRUTcs/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/k8eoGwRUTcs/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "ICF Karlsruhe",
+        "type": "upload",
+        "groupId": "MTUxNjMxNTA5MjEyMTYzMTUwOTIxMjAwMDI5NQ"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "k8eoGwRUTcs"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "V-dCCEYq5dQqRH7lwf2q7-hWSfU",
+      "id": "MTUxNjMxMDE1NjY2MTYzMTAxNTY2NjAwMDg5Mg",
+      "snippet": {
+        "publishedAt": "2021-09-07T11:54:26+00:00",
+        "channelId": "UCNshqh-axwENmUmHITY1stA",
+        "title": "Summer Celebration - Die Petrus Perspektive | Jana Highholder",
+        "description": "Wir setzen eurem Sommer die Kirsche auf die Sahne! Freut euch auf viele tolle Guestspeakers die nächsten Wochen. Jeder von ihnen hat eine überzeugende Message im Gepäck – extra nur für uns! So unterschiedlich, fröhlich und frisch wie die Gäste werden auch die Celebrations sein. Das ist der Sommer im ICF.\n\nPredigt vom 8.8.2021 \n\nMehr Infos über ICF Karlsruhe unter: \nhttps://www.icf-karlsruhe.de\n\n–\n\nWir feiern unsere Gottesdienste sonntags vor Ort im ICF Karlsruhe und unseren Standorten sowie Online per Livestream. Unsere aktuellen Gottesdienstzeiten sind 9:30 / 11:15 Uhr und 18:30 Uhr. Mehr Infos und Anmeldung: https://www.icf-karlsruhe.de\n\n–\n\nDieser Podcast wird durch Spenden möglich gemacht. Wenn du möchtest, kannst du diese Arbeit per Paypal mit unterstützen. \nPodcast unterstützen: https://www.icf-karlsruhe.de/podcasts...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/z6QjO0jMJWQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/z6QjO0jMJWQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/z6QjO0jMJWQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/z6QjO0jMJWQ/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/z6QjO0jMJWQ/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "ICF Karlsruhe",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "z6QjO0jMJWQ"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "psBqI2MljIDd-rAcY2Z8Dkl5jU4",
+      "id": "MTUxNjMwOTUwNTA4MTYzMDk1MDUwODAwMDI4OA",
+      "snippet": {
+        "publishedAt": "2021-09-06T17:48:28+00:00",
+        "channelId": "UCNshqh-axwENmUmHITY1stA",
+        "title": "Summer Celebration | Fruit Explosion - Wie dein Leben Frucht bringt  | Florian Stielper",
+        "description": "Wir setzen eurem Sommer die Kirsche auf die Sahne! Freut euch auf viele tolle Guestspeaker die nächsten Wochen. Jeder von ihnen hat eine überzeugende Message im Gepäck – extra nur für uns! So unterschiedlich, fröhlich und frisch wie die Gäste werden auch die Celebrations sein. Das ist der Sommer im ICF.\n\nPredigt vom 05.09.2021 \n\nMehr Infos über ICF Karlsruhe unter: \nhttps://www.icf-karlsruhe.de\n\n–\n\nWir feiern unsere Gottesdienste sonntags vor Ort im ICF Karlsruhe und unseren Standorten sowie Online per Livestream. Unsere aktuellen Gottesdienstzeiten sind 9:30 / 11:15 Uhr und 18:30 Uhr. Mehr Infos und Anmeldung: https://www.icf-karlsruhe.de\n\n–\n\nDieser Podcast wird durch Spenden möglich gemacht. Wenn du möchtest, kannst du diese Arbeit per Paypal mit unterstützen.\nPodcast unterstützen: https://www.icf-karlsruhe.de/podcasts...\n\nMehr Infos über ICF Karlsruhe unter: \nhttps://www.icf-karlsruhe.de",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/sLLLIVNAAP4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/sLLLIVNAAP4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/sLLLIVNAAP4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/sLLLIVNAAP4/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/sLLLIVNAAP4/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "ICF Karlsruhe",
+        "type": "upload",
+        "groupId": "MTUxNjMwOTUwNTA4MTYzMDk1MDUwODAwMDI4OA"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "sLLLIVNAAP4"
+        }
+      }
+    }
+  ],
+  "nextPageToken": "CAUQAA",
+  "pageInfo": {
+    "totalResults": 20,
+    "resultsPerPage": 5
+  }
+}
+```
+
++++ </div></details> +++
