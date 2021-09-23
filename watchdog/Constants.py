@@ -20,7 +20,7 @@ class SettingConstants:
         self._logger.debug(f"Loaded settings file {self.json_path}")
 
     def get_oauth_url(self):
-        return self.constants_json.get("oauth_url")
+        return self.val.get_or_throw_error("oauth_url")
 
 
 class SecretConstants:
