@@ -17,7 +17,7 @@ class AccessTokenUpdater:
 
     def needs_to_be_updated(self):
         # WIP: enter the date checking and log the new token
-        if self.token.age == "":
+        if self.token.date == "":
             self._logger.debug("UpdateAccessToken needs to be updated.")
 
             # res = self.get_new_access_token()

@@ -8,5 +8,5 @@ class AccessToken:
     def __init__(self):
         access_token_dict = SecretConstants().get_oauth_access_token_dict()
         self.id = access_token_dict.get("token")
-        self.age = access_token_dict.get("date")
-        self._logger.debug(f"Loaded token '{self.id}' created on date '{self.age}'")
+        self.date = access_token_dict.get("id")
+        self._logger.debug(f"Loaded token '{self.id}' created on date '{self.date}'")
