@@ -3,7 +3,7 @@ from watchdog.queries.HttpRequestExecutor import HttpRequestExecutor as q
 import watchdog.logs.Logging as log
 from watchdog.constants.Constants import SecretConstants, SettingConstants
 from watchdog.constants.ConstantsUpdater import ConstantsUpdater
-from watchdog.TimeHandler import get_current_time_string, get_current_time, get_datetime_from_string
+from watchdog.utils.TimeHandler import get_current_time_string, get_current_time, get_datetime_from_string
 
 
 class AccessTokenUpdater:
