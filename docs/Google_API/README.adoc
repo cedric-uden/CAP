@@ -34,7 +34,7 @@ Log in with the YouTube account *which uploads the sermons*.
 Create a new project
 +++ </summary><div> +++
 
-image::01-create_project.png[]
+image::01-create_project.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -43,7 +43,7 @@ image::01-create_project.png[]
 Name the project and create it
 +++ </summary><div> +++
 
-image::02-name_project.png[]
+image::02-name_project.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -60,7 +60,7 @@ _You should now be greeted by the project dashboard._
 Go to the sidebar menu
 +++ </summary><div> +++
 
-image::03-go_to_sidebar_menu.png[]
+image::03-go_to_sidebar_menu.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -69,7 +69,7 @@ image::03-go_to_sidebar_menu.png[]
 Open APIs and Services
 +++ </summary><div> +++
 
-image::04-go_to_APIs_and_services.png[]
+image::04-go_to_APIs_and_services.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -78,7 +78,7 @@ image::04-go_to_APIs_and_services.png[]
 Head over to 'Activate APIs and Services'
 +++ </summary><div> +++
 
-image::05-go_to_activate_API_and_services.png[]
+image::05-go_to_activate_API_and_services.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -87,7 +87,7 @@ image::05-go_to_activate_API_and_services.png[]
 Search for 'youtube' and hit enter.
 +++ </summary><div> +++
 
-image::06-search_for_youtube.png[]
+image::06-search_for_youtube.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -96,7 +96,7 @@ image::06-search_for_youtube.png[]
 Select the 'YouTube Data API'
 +++ </summary><div> +++
 
-image::07-select_youtube_data_API.png[]
+image::07-select_youtube_data_API.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -105,7 +105,7 @@ image::07-select_youtube_data_API.png[]
 Activate it
 +++ </summary><div> +++
 
-image::08-activate_youtube_data_API.png[]
+image::08-activate_youtube_data_API.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -114,7 +114,7 @@ image::08-activate_youtube_data_API.png[]
 Head back to APIs and Services
 +++ </summary><div> +++
 
-image::09-head_back_to_APIs_and_services.png[]
+image::09-head_back_to_APIs_and_services.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -127,7 +127,7 @@ image::09-head_back_to_APIs_and_services.png[]
 Go to 'OAuth Activation Screen' on the left
 +++ </summary><div> +++
 
-image::10-oauth_activation_screen.png[]
+image::10-oauth_activation_screen.jpeg[]
 +++ </div></details> +++
 
 
@@ -137,7 +137,7 @@ image::10-oauth_activation_screen.png[]
 Select 'extern'
 +++ </summary><div> +++
 
-image::11-select_extern.png[]
+image::11-select_extern.jpeg[]
 +++ </div></details> +++
 
 
@@ -147,8 +147,8 @@ image::11-select_extern.png[]
 Enter the details
 +++ </summary><div> +++
 
-image::12-enter_details_pt1.png[]
-image::13-enter_details_pt2.png[]
+image::12-enter_details_pt1.jpeg[]
+image::13-enter_details_pt2.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -157,7 +157,7 @@ image::13-enter_details_pt2.png[]
 Skip restrict sections
 +++ </summary><div> +++
 
-image::14-skip_sections.png[]
+image::14-skip_sections.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -166,7 +166,7 @@ image::14-skip_sections.png[]
 Add a test user
 +++ </summary><div> +++
 
-image::15-add_test_user.png[]
+image::15-add_test_user.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -177,7 +177,7 @@ Enter a Google account as a test user
 
 WARNING: Confirm twice for whatever reason.
 
-image::16-enter_google_account_and_confirm_twice.png[]
+image::16-enter_google_account_and_confirm_twice.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -186,7 +186,7 @@ image::16-enter_google_account_and_confirm_twice.png[]
 Save the created test user
 +++ </summary><div> +++
 
-image::17-save_test_users.png[]
+image::17-save_test_users.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -195,7 +195,7 @@ image::17-save_test_users.png[]
 And back to the Dashboard
 +++ </summary><div> +++
 
-image::18-back_to_dashboard.png[]
+image::18-back_to_dashboard.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -210,7 +210,7 @@ image::18-back_to_dashboard.png[]
 Head to credentials
 +++ </summary><div> +++
 
-image::19-go_to_credentials.png[]
+image::19-go_to_credentials.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -219,7 +219,7 @@ image::19-go_to_credentials.png[]
 Add credentials
 +++ </summary><div> +++
 
-image::20-add_credentials.png[]
+image::20-add_credentials.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -228,7 +228,7 @@ image::20-add_credentials.png[]
 Add an API key
 +++ </summary><div> +++
 
-image::21-add_API_key.png[]
+image::21-add_API_key.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -237,7 +237,7 @@ image::21-add_API_key.png[]
 Set the API key permissions
 +++ </summary><div> +++
 
-image::22-set_API_key_permissions.png[]
+image::22-set_API_key_permissions.jpeg[]
 +++ </div></details> +++
 
 
@@ -247,7 +247,7 @@ image::22-set_API_key_permissions.png[]
 Set restrictions for the key
 +++ </summary><div> +++
 
-image::23-restrict_the_key.png[]
+image::23-restrict_the_key.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -256,7 +256,7 @@ image::23-restrict_the_key.png[]
 Select the YouTube Data API
 +++ </summary><div> +++
 
-image::24-select_youtube_API.png[]
+image::24-select_youtube_API.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -265,7 +265,7 @@ image::24-select_youtube_API.png[]
 Store the API key and save the API restrictions
 +++ </summary><div> +++
 
-image::25-save_API_restrictions.png[]
+image::25-save_API_restrictions.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -276,14 +276,14 @@ image::25-save_API_restrictions.png[]
 Add credentials
 +++ </summary><div> +++
 
-image::20-add_credentials.png[]
+image::20-add_credentials.jpeg[]
 +++ </div></details> +++
 
 +++ <details><summary> +++
 Add OAuth-Client-ID
 +++ </summary><div> +++
 
-image::26-add_oauth_client_ID.png[]
+image::26-add_oauth_client_ID.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -292,7 +292,7 @@ image::26-add_oauth_client_ID.png[]
 Configure OAuth-Client-ID
 +++ </summary><div> +++
 
-image::27-configure_oauth_client_ID.png[]
+image::27-configure_oauth_client_ID.jpeg[]
 +++ </div></details> +++
 
 
@@ -302,7 +302,7 @@ image::27-configure_oauth_client_ID.png[]
 Store both credentials as they will be needed later on
 +++ </summary><div> +++
 
-image::28-copy_credentials.png[]
+image::28-copy_credentials.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -341,7 +341,7 @@ Paste the above request with updated values into a browser window.
 Log in with your test user from section <<_configure_oauth_activation_screen, Configure OAuth activation screen>>
 +++ </summary><div> +++
 
-image::29-login_with_test_user.png[]
+image::29-login_with_test_user.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -350,7 +350,7 @@ image::29-login_with_test_user.png[]
 Skip the warning that Google has not validated the app
 +++ </summary><div> +++
 
-image::30-not_validated_by_google.png[]
+image::30-not_validated_by_google.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -359,7 +359,7 @@ image::30-not_validated_by_google.png[]
 Allow access
 +++ </summary><div> +++
 
-image::31-allow_access.png[]
+image::31-allow_access.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -368,7 +368,7 @@ image::31-allow_access.png[]
 Now, OAuth is redirecting to a non-existent URL. This is expected.
 +++ </summary><div> +++
 
-image::32-website_not_found.png[]
+image::32-website_not_found.jpeg[]
 +++ </div></details> +++
 
 // ---------------------------
@@ -377,7 +377,7 @@ image::32-website_not_found.png[]
 Store the URL which got redirected to
 +++ </summary><div> +++
 
-image::33-copy_the_URL.png[]
+image::33-copy_the_URL.jpeg[]
 +++ </div></details> +++
 
 ==== Retrieve code
