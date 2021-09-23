@@ -1,0 +1,37 @@
+= Church Audio Podcast
+
+This app periodically verifies the church's YT channel for new sermons.
+
+When available, the URL is sent to a MP3 converter to get the audio file.
+
+Said audio file is then transferred onto an FTP server where it is then processed
+and finalised by the team in the church's office.
+
+== Structure
+
+=== YT watchdog
+
+Works via YouTube API and checks if any new videos have been uploaded.
+
+=== YT to MP3 downloader
+
+Works on the server which then proceeds to download sermons to mp3 based on
+their ID.
+
+```
+brew install youtube-dl
+youtube-dl --extract-audio --audio-format mp3 <video-id>
+```
+
+=== Upload to FTP
+
+WIP: will upload the MP3 to an FTP server
+
+== Setup
+
+```
+conda create --name cap python=3.9
+conda activate cap
+conda install poetry
+poetry install
+```
