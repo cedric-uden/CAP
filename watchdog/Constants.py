@@ -1,10 +1,8 @@
 import watchdog.logs.Logging as log
 from watchdog.ConstantsValidator import ConstantsValidator
+from watchdog.ConstantsPaths import secrets_json_path, settings_json_path
 
 import json
-
-
-path_prefix = "."
 
 
 class SettingConstants:
@@ -12,7 +10,7 @@ class SettingConstants:
     _logger = log.get_logger(__name__)
 
     def __init__(self):
-        self.json_path = f"{path_prefix}/settings.json"
+        self.json_path = settings_json_path
         file_settings = open(self.json_path, 'r')
         self.constants_json = json.load(file_settings)
         self.val = ConstantsValidator(self)
@@ -31,7 +29,7 @@ class SecretConstants:
     _logger = log.get_logger(__name__)
 
     def __init__(self):
-        self.json_path = f"{path_prefix}/secrets.json"
+        self.json_path = secrets_json_path
         file_secrets = open(self.json_path, 'r')
         self.constants_json = json.load(file_secrets)
         self.val = ConstantsValidator(self)
