@@ -32,10 +32,9 @@ class UpdateAccessToken:
         }
         res = q().post(self.oauth_url, data)
 
-        text = f"Query to URL {self.oauth_url} and params {data}"
         if res.ok:
-            self._logger.debug(f"{text} was successful.")
+            self._logger.debug("Query was successful.")
         else:
-            self._logger.critical(f"{text} did not succeed.")
+            self._logger.critical("Query did not succeed.")
 
         return res
