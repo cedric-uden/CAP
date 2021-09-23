@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "cap"
+version = "0.1.0"
+description = ""
+authors = ["Cédric Uden <cedric@uden.de>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+google-api-python-client = "^2.22.0"
+google-auth-oauthlib = "^0.4.6"
+Flask = "^2.0.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
