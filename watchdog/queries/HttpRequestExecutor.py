@@ -2,7 +2,7 @@ import watchdog.logs.Logging as log
 import requests
 
 
-class MakeQuery:
+class HttpRequestExecutor:
 
     _logger = log.get_logger(__name__)
 
