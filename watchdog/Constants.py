@@ -22,6 +22,9 @@ class SettingConstants:
     def get_oauth_url(self):
         return self.val.get_or_throw_error("oauth_url")
 
+    def get_time_format(self):
+        return self.val.get_or_throw_error("time_format")
+
 
 class SecretConstants:
 
