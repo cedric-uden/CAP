@@ -1,4 +1,4 @@
-from watchdog.Constants import SettingConstants
+from watchdog.constants.Constants import SettingConstants
 
 from datetime import datetime
 

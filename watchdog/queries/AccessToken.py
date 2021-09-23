@@ -1,4 +1,4 @@
-from watchdog.Constants import SecretConstants
+from watchdog.constants.Constants import SecretConstants
 import watchdog.logs.Logging as log
 
 

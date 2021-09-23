@@ -1,6 +1,6 @@
 import watchdog.logs.Logging as log
-from watchdog.ConstantsValidator import ConstantsValidator
-from watchdog.ConstantsPaths import secrets_json_path, settings_json_path
+from watchdog.constants.ConstantsValidator import ConstantsValidator
+from watchdog.constants.ConstantsPaths import secrets_json_path, settings_json_path
 
 import json
 

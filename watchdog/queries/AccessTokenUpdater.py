@@ -1,8 +1,8 @@
 from watchdog.queries.AccessToken import AccessToken
 from watchdog.queries.HttpRequestExecutor import HttpRequestExecutor as q
 import watchdog.logs.Logging as log
-from watchdog.Constants import SecretConstants, SettingConstants
-from watchdog.ConstantsUpdater import ConstantsUpdater
+from watchdog.constants.Constants import SecretConstants, SettingConstants
+from watchdog.constants.ConstantsUpdater import ConstantsUpdater
 from watchdog.TimeHandler import get_current_time_string, get_current_time, get_datetime_from_string
 
 
