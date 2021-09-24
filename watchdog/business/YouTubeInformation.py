@@ -1,7 +1,7 @@
-from watchdog.queries.CheckYouTubeVideoInspector import CheckYouTubeVideoInspector
 from watchdog.queries.MostRecentYouTubeVideos import MostRecentYouTubeVideos
 from watchdog.utils.PersistVideoInformation import PersistVideoInformation
 from watchdog.business.YouTubeVideoStates import YouTubeVideoStates as state
+from watchdog.business.ValidateLegitimatePodcast import ValidateLegitimatePodcast
 import watchdog.logs.Logging as log
 
 
@@ -18,6 +18,7 @@ class YouTubeInformation:
         self.get_most_recent_yt_video_ids()
         self.add_new_videos_to_video_information_set()
         self.check_videos_to_be_identified()
+        self.validate_videos_to_be_identified()
 
     def get_most_recent_yt_video_ids(self):
         all_videos = MostRecentYouTubeVideos().get_json()
@@ -47,3 +48,6 @@ class YouTubeInformation:
             if status is state.NEW:
                 self.videos_to_be_processed.add(video)
                 self._logger.debug(f"Video '{video}' needs to be identified.")
+
+    def validate_videos_to_be_identified(self):
+        ValidateLegitimatePodcast(self.videos_to_be_processed).validate_videos()
