@@ -9,6 +9,7 @@ import os
 
 DOWNLOAD_FOLDER = "downloads"
 
+
 class FTPUploader:
     _logger = log.get_logger(__name__)
 
@@ -49,6 +50,7 @@ class FTPUploader:
     def upload_files_in_set(self):
         for video_id in self.videos_to_be_uploaded:
             self.upload_this_file(video_id)
+            self.update_state(video_id, state.UPLOADED)
 
     def upload_this_file(self, video_id):
         server = self.ftp_info['server']
@@ -69,4 +71,8 @@ class FTPUploader:
         file.close()
         session.quit()
         self._logger.info(f"Uploaded {video_id} to FTP")
+
+    def update_state(self, key, value):
+        self._logger.debug(f"Going to update state for {key}")
+        PersistVideoInformation().update_video_information(key, value)
 
