@@ -26,6 +26,12 @@ class SettingConstants:
     def get_youtube_data_api_url(self):
         return self.val.get_or_throw_error("youtube_data_api_url")
 
+    def get_podcast_min_duration(self):
+        return self.val.get_or_throw_error("podcast_min_duration")
+
+    def get_podcast_max_duration(self):
+        return self.val.get_or_throw_error("podcast_max_duration")
+
 
 class SecretConstants:
 
