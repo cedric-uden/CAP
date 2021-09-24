@@ -4,6 +4,7 @@ from src.utils.PersistVideoInformation import PersistVideoInformation
 from src.business.YouTubeVideoStates import YouTubeVideoStates as state
 
 import ftplib
+import os
 
 
 class FTPUploader:
@@ -15,6 +16,7 @@ class FTPUploader:
         self.all_videos = PersistVideoInformation().get_video_information()
         self.videos_to_be_uploaded = set()
         self.get_files_to_upload()
+        self.all_files_dict = {}
 
     def get_files_to_upload(self):
         for video_id, status in self.all_videos.items():
@@ -23,5 +25,13 @@ class FTPUploader:
                 self._logger.debug(f"Found video {video_id} "
                                    f"to be uploaded to FTP.")
 
+    def match_ids_to_files(self):
+        all_files = os.listdir('downloads/')
+        for file in all_files:
+            if file != ".gitkeep":
+                file_split = file.split("-")
+                video_id_from_file = file_split[1]
+                self.all_files_dict.update({video_id_from_file: file})
+
     def upload(self):
-        pass
+        self.match_ids_to_files()
