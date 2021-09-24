@@ -65,3 +65,9 @@ class SecretConstants:
         :return: the dict containing the access_token token and its date of creation.
         """
         return self.val.get_or_throw_error("OAuth_Access_Token_Details")
+
+    def get_ftp_dict(self):
+        """
+        :return: the dict containing the ftp information
+        """
+        return self.val.get_or_throw_error("FTP_Information")
