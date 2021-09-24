@@ -14,7 +14,7 @@ class YouTubeInformation:
         self.vid_info = PersistVideoInformation().get_video_information()
         self.videos_to_be_processed = set()
 
-    def get_info(self):
+    def update(self):
         self.get_most_recent_yt_video_ids()
         self.add_new_videos_to_video_information_set()
         self.check_videos_to_be_identified()
