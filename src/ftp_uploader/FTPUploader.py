@@ -48,7 +48,9 @@ class FTPUploader:
         pw = self.ftp_info['password']
 
         self._logger.debug(f"Attempting to upload {video_id} to FTP")
-        session = ftplib.FTP(server, user, pw)
+        session = ftplib.FTP()
+        session.connect(server, port)
+        session.login(user, pw)
 
         local_filename = self.all_files_dict.get(video_id)
         local_filepath = f"downloads/{local_filename}"
