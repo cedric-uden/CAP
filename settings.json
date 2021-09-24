@@ -3,6 +3,6 @@
   "youtube_data_api_url": "https://youtube.googleapis.com/youtube/v3",
   "podcast_min_duration": 20,
   "podcast_max_duration": 60,
-  "youtubedl_path": "/usr/bin/youtube-dl" ,
+  "youtubedl_path": "/usr/local/bin/youtube-dl" ,
   "time_format": "%Y-%m-%dT%H:%M:%SZ"
 }
