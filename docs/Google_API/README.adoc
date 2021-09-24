@@ -459,10 +459,9 @@ _View the expected output_
 
 ```bash
 curl \
-  'https://youtube.googleapis.com/youtube/v3/activities?part=contentDetails&part=id&part=snippet&mine=true&key=<ENTER_API_KEY>' \
+  'https://youtube.googleapis.com/youtube/v3/activities?part=contentDetails&part=id&part=snippet&mine=True&key=<ENTER_API_KEY>' \
   --header 'Authorization: Bearer <ENTER_ACCESS_TOKEN>' \
-  --header 'Accept: application/json' \
-  --compressed
+  --header 'Accept: application/json'
 ```
 
 NOTE: Now we need the API Key <<_create_api_key, from section create API key>>
