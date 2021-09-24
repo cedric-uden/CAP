@@ -29,6 +29,9 @@ class FTPUploader:
                 self._logger.debug(f"Found video {video_id} "
                                    f"to be uploaded to FTP.")
 
+        if len(self.videos_to_be_uploaded) == 0:
+            self._logger.info("No podcasts to be uploaded to FTP found.")
+
     def sanitize_filenames(self):
         all_files = os.listdir(DOWNLOAD_FOLDER)
         for file in all_files:

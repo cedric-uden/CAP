@@ -22,6 +22,9 @@ class MP3Downloader:
         self._logger.debug(f"Podcasts want to be downloaded as MP3:"
                            f"{str(self.videos_to_be_uploaded)}")
 
+        if len(self.videos_to_be_uploaded) == 0:
+            self._logger.info("No videos to be downloaded from YouTube found.")
+
     def download(self):
         for video_id in self.videos_to_be_uploaded:
             cmd = self.build_youtubedl_command(video_id)
