@@ -36,6 +36,7 @@ class MP3Downloader:
         return f"{self.settings.get_youtubedl_path()} " \
                f"--extract-audio " \
                f"--audio-format mp3 " \
+               f"--audio-quality 0 " \
                f"-o downloads/%(upload_date)s-%(id)s-%(title)s.%(ext)s " \
                f"https://www.youtube.com/watch?v={video_id}"
 
