@@ -33,7 +33,7 @@ class MP3Downloader:
         return f"{self.settings.get_youtubedl_path()} " \
                f"--extract-audio " \
                f"--audio-format mp3 " \
-               f"-o downloads/%(upload_date)s-%(id)s.%(ext)s " \
+               f"-o downloads/%(upload_date)s-%(id)s-%(title)s.%(ext)s " \
                f"https://www.youtube.com/watch?v={video_id}"
 
     def run_cmd(self, run_this_cmd):
