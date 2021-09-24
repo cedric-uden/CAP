@@ -1,5 +1,5 @@
 import pickle
-from src.constants.ConstantsPaths import video_states_pickle_path
+from src.constants.ConstantsPaths import video_states_pickle_path, video_detailed_info_pickle_path
 import src.logs.Logging as log
 
 
@@ -33,3 +33,27 @@ class PersistVideoInformation:
         video_information = self.get_video_state()
         video_information[key] = value
         self.store_video_state(video_information)
+
+    #
+    #
+    #
+    #
+    #
+
+    def store_video_info(self, dictionary):
+        file = open(video_detailed_info_pickle_path, 'wb')
+        pickle.dump(dictionary, file)
+        file.close()
+        self._logger.debug("Wrote video information pickle file.")
+
+    def get_video_info(self):
+        file = open(video_detailed_info_pickle_path, 'rb')
+        dictionary = {}
+        try:
+            dictionary = pickle.load(file)
+        except EOFError:
+            self._logger.warn("Pickle file has not been created.")
+
+        file.close()
+        self._logger.debug("Loaded the video information pickle file.")
+        return dictionary
