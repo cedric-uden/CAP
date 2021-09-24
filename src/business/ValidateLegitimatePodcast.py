@@ -3,6 +3,7 @@ from src.queries.CheckYouTubeVideoInspector import CheckYouTubeVideoInspector
 import src.logs.Logging as log
 from src.constants.Constants import SettingConstants
 from src.utils.PersistVideoInformation import PersistVideoInformation
+from src.business.HandleDetailedInfoFromVideos import HandleDetailedInfoFromVideos
 
 import re
 
@@ -18,6 +19,7 @@ class ValidateLegitimatePodcast:
     def validate_videos(self):
         for video_id in self.videos_to_be_processed:
             video_info = CheckYouTubeVideoInspector().get_json_from_youtube_id(video_id)
+            HandleDetailedInfoFromVideos(video_info).store()
             valid_metadata = self.valid_metadata(video_id, video_info)
             valid_duration = self.valid_time(video_id, video_info)
             if valid_metadata and valid_duration:
