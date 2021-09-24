@@ -23,7 +23,7 @@ class ValidateLegitimatePodcast:
 
     def update_video_state(self, video_id):
         self._logger.info(f"Video '{video_id}' identified to be uploaded as MP3.")
-        PersistVideoInformation().update_video_information(video_id, state.TO_BE_UPLOADED)
+        PersistVideoInformation().update_video_information(video_id, state.TO_BE_DOWNLOADED)
 
     def valid_metadata(self, video_id, video_info):
         cond1 = (video_info['items'][0]['status']['uploadStatus'] == "processed")
