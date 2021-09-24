@@ -5,6 +5,6 @@ from src.ftp_uploader.FTPUploader import FTPUploader
 
 log.setup(stream_level=log.INFO)
 
-# YouTubeInformation().update()
-# MP3Downloader().download()
+YouTubeInformation().update()
+MP3Downloader().download()
 FTPUploader().upload()
