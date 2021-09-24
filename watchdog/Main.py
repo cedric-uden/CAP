@@ -1,7 +1,6 @@
-from watchdog.queries.AccessTokenUpdater import AccessTokenUpdater
 import watchdog.logs.Logging as log
+from watchdog.queries.MostRecentYouTubeVideos import MostRecentYouTubeVideos
 
 log.setup(stream_level=log.INFO)
 
-
-AccessTokenUpdater().needs_to_be_updated()
+print(MostRecentYouTubeVideos().get_json())
