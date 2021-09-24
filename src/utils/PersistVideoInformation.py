@@ -14,7 +14,7 @@ class PersistVideoInformation:
         file = open(video_states_pickle_path, 'wb')
         pickle.dump(dictionary, file)
         file.close()
-        self._logger.debug("Wrote video information pickle file.")
+        self._logger.debug("Wrote video state pickle file.")
 
     def get_video_state(self):
         file = open(video_states_pickle_path, 'rb')
@@ -25,7 +25,7 @@ class PersistVideoInformation:
             self._logger.warn("Pickle file has not been created.")
 
         file.close()
-        self._logger.debug("Loaded the video information pickle file.")
+        self._logger.debug("Loaded the video state pickle file.")
         return dictionary
 
     def update_video_state(self, key, value):
