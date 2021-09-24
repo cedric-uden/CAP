@@ -26,7 +26,8 @@ class MP3Downloader:
         for video_id in self.videos_to_be_uploaded:
             cmd = self.build_youtubedl_command(video_id)
             cmd_output = self.run_cmd(cmd)
-            self.check_if_successfully_downloaded(cmd_output)
+            if self.check_if_successfully_downloaded(cmd_output):
+                self.update_state(video_id, state.DOWNLOADED_NOT_UPLOADED)
 
     def build_youtubedl_command(self, video_id):
         return f"{self.settings.get_youtubedl_path()} " \
@@ -56,3 +57,6 @@ class MP3Downloader:
 
         return downloaded_successfully
 
+    def update_state(self, key, value):
+        self._logger.debug(f"Going to update state for {key}")
+        PersistVideoInformation().update_video_information(key, value)
