@@ -1,4 +1,4 @@
-import watchdog.logs.Logging as log
+import src.logs.Logging as log
 
 
 class ConstantsValidator:

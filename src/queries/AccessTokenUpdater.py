@@ -1,9 +1,9 @@
-from watchdog.queries.AccessToken import AccessToken
-from watchdog.queries.HttpRequestExecutor import HttpRequestExecutor as q
-import watchdog.logs.Logging as log
-from watchdog.constants.Constants import SecretConstants, SettingConstants
-from watchdog.constants.ConstantsUpdater import ConstantsUpdater
-from watchdog.utils.TimeHandler import get_current_time_string, get_current_time, get_datetime_from_string
+from src.queries.AccessToken import AccessToken
+from src.queries.HttpRequestExecutor import HttpRequestExecutor as q
+import src.logs.Logging as log
+from src.constants.Constants import SecretConstants, SettingConstants
+from src.constants.ConstantsUpdater import ConstantsUpdater
+from src.utils.TimeHandler import get_current_time_string, get_current_time, get_datetime_from_string
 
 
 class AccessTokenUpdater:

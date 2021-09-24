@@ -1,8 +1,8 @@
-from watchdog.business.YouTubeVideoStates import YouTubeVideoStates as state
-from watchdog.queries.CheckYouTubeVideoInspector import CheckYouTubeVideoInspector
-import watchdog.logs.Logging as log
-from watchdog.constants.Constants import SettingConstants
-from watchdog.utils.PersistVideoInformation import PersistVideoInformation
+from src.business.YouTubeVideoStates import YouTubeVideoStates as state
+from src.queries.CheckYouTubeVideoInspector import CheckYouTubeVideoInspector
+import src.logs.Logging as log
+from src.constants.Constants import SettingConstants
+from src.utils.PersistVideoInformation import PersistVideoInformation
 
 import re
 

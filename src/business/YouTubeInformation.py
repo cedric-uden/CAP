@@ -1,8 +1,8 @@
-from watchdog.queries.MostRecentYouTubeVideos import MostRecentYouTubeVideos
-from watchdog.utils.PersistVideoInformation import PersistVideoInformation
-from watchdog.business.YouTubeVideoStates import YouTubeVideoStates as state
-from watchdog.business.ValidateLegitimatePodcast import ValidateLegitimatePodcast
-import watchdog.logs.Logging as log
+from src.queries.MostRecentYouTubeVideos import MostRecentYouTubeVideos
+from src.utils.PersistVideoInformation import PersistVideoInformation
+from src.business.YouTubeVideoStates import YouTubeVideoStates as state
+from src.business.ValidateLegitimatePodcast import ValidateLegitimatePodcast
+import src.logs.Logging as log
 
 
 class YouTubeInformation:

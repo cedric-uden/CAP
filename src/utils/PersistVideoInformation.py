@@ -1,6 +1,6 @@
 import pickle
-from watchdog.constants.ConstantsPaths import video_information_pickle_path
-import watchdog.logs.Logging as log
+from src.constants.ConstantsPaths import video_information_pickle_path
+import src.logs.Logging as log
 
 
 class PersistVideoInformation:

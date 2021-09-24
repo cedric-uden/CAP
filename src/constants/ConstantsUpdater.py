@@ -1,6 +1,6 @@
 import json
-import watchdog.logs.Logging as log
-from watchdog.constants.ConstantsPaths import secrets_json_path, settings_json_path
+import src.logs.Logging as log
+from src.constants.ConstantsPaths import secrets_json_path, settings_json_path
 
 
 class ConstantsUpdater:

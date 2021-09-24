@@ -1,8 +1,8 @@
-from watchdog.queries.HttpRequestExecutor import HttpRequestExecutor as q
-import watchdog.logs.Logging as log
-from watchdog.queries.AccessToken import AccessToken
-from watchdog.constants.Constants import SecretConstants, SettingConstants
-from watchdog.queries.AccessTokenUpdater import AccessTokenUpdater
+from src.queries.HttpRequestExecutor import HttpRequestExecutor as q
+import src.logs.Logging as log
+from src.queries.AccessToken import AccessToken
+from src.constants.Constants import SecretConstants, SettingConstants
+from src.queries.AccessTokenUpdater import AccessTokenUpdater
 
 
 class CheckYouTubeVideoInspector:

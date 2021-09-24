@@ -1,5 +1,5 @@
-from watchdog.constants.Constants import SecretConstants
-import watchdog.logs.Logging as log
+from src.constants.Constants import SecretConstants
+import src.logs.Logging as log
 
 
 class AccessToken:
