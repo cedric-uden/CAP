@@ -34,9 +34,6 @@ class YouTubeInformation:
             if not self.is_video_in_video_information_set(video):
                 self.vid_info.update({video: state.NEW})
                 self._logger.debug(f"Added video {video} to the information set.")
-            PersistVideoInformation().store_video_information(self.vid_info)
+                PersistVideoInformation().store_video_information(self.vid_info)
             else:
                 self._logger.debug(f"Video {video} was found in the video information set.")
-
-
-
