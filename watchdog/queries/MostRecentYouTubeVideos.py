@@ -27,7 +27,7 @@ class MostRecentYouTubeVideos:
     def build_query(self):
         url = f"{self.set_const.get_youtube_data_api_url()}/activities"
         params = {
-            'part': ['contentDetails', 'id', 'snippet'],
+            'part': 'contentDetails',
             'mine': True,
             'key': self.sec_const.get_yt_api_key()
         }
