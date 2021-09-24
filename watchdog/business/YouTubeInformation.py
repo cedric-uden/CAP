@@ -38,7 +38,9 @@ class YouTubeInformation:
                 self._logger.debug(f"Added video '{video}' to the information set.")
                 PersistVideoInformation().store_video_information(self.vid_info)
             else:
-                self._logger.debug(f"Video '{video}' was found in the video information set.")
+                self._logger.debug(f"Video '{video}' was found in the video "
+                                   f"information set. State is set to "
+                                   f"{self.vid_info.get(video)}")
 
     def check_videos_to_be_identified(self):
         for video, status in self.vid_info.items():
