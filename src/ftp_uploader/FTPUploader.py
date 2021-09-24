@@ -15,8 +15,9 @@ class FTPUploader:
         self.ftp_info = SecretConstants().get_ftp_dict()
         self.all_videos = PersistVideoInformation().get_video_information()
         self.videos_to_be_uploaded = set()
-        self.get_files_to_upload()
         self.all_files_dict = {}
+
+        self.get_files_to_upload()
 
     def get_files_to_upload(self):
         for video_id, status in self.all_videos.items():
