@@ -1,0 +1,181 @@
+= Query Info
+
+Store the expected output from the queries and get an overview
+of the relevant JSON fields.
+
+== MostRecentYouTubeVideos
+
+https://developers.google.com/youtube/v3/docs/activities/list[Link to API documentation]
+
+[cols="1,1"]
+|===
+| Field Name                                                    | Expected Value
+
+| ['items'][0-3]['contentDetails']['upload']['videoId']         | id
+|===
+
+`items` has several results and should be iterated over
+
++++ <details><summary> +++
+View expected JSON response
++++ </summary><div> +++
+```json
+{
+  'kind': 'youtube#activityListResponse',
+  'etag': 'pETyWCdfwo2I0jpDgZduWDb__AU',
+  'items': [
+    {
+      'kind': 'youtube#activity',
+      'etag': 'BdgmbamDCfkqrGl2HtV_SVdCZxQ',
+      'id': 'NTMxNjMyMjUyNDk0MTYzMjI1MjQ5NDAwMDY0OA',
+      'contentDetails': {}
+    },
+    {
+      'kind': 'youtube#activity',
+      'etag': 'IQ8zZqfNAMsZaXsbpfFkROOnwoI',
+      'id': 'MTUxNjMyMTMzMjgxMTYzMjEzMzI4MTAwMDA1NA',
+      'contentDetails': {
+        'upload': {
+          'videoId': 'o2AagtlRFoE'
+        }
+      }
+    },
+    {
+      'kind': 'youtube#activity',
+      'etag': '0Mi6RzEBkZrmPqrnEC8i6tztoMc',
+      'id': 'MTA3MTYzMjA0MTE0NzE2MzIwNDExNDcwMDA4ODQ',
+      'contentDetails': {}
+    },
+    {
+      'kind': 'youtube#activity',
+      'etag': 'se1GX9VTIGkoKbShmc-keShg7w4',
+      'id': 'MTA4MTYzMjAzNTUwNTE2MzIwMzU1MDUwMDA1NDE',
+      'contentDetails': {}
+    },
+    {
+      'kind': 'youtube#activity',
+      'etag': 'G16ZQu5qX-QLoqEG4cN_cw87cn0',
+      'id': 'MTA3MTYzMjA3MzkzNDE2MzIwNzM5MzQwMDAxMjg',
+      'contentDetails': {}
+    }
+  ],
+  'nextPageToken': 'CAUQAA',
+  'pageInfo': {
+    'totalResults': 20,
+    'resultsPerPage': 5
+  }
+}
+```
++++ </div></details> +++
+
+== CheckYouTubeVideoInspector
+
+https://developers.google.com/youtube/v3/docs/videos/list[Link to API documentation]
+
+[cols="1,1"]
+|===
+| Field Name                                                    | Expected Value
+
+| ['items'][0]['snippet']['title']                              | <Serie - Titel - Prediger>
+| ['items'][0]['contentDetails']['duration']                    | PT36M25S
+| ['items'][0]['status']['uploadStatus']                        | processed
+| ['items'][0]['status']['privacyStatus']                       | public
+| ['items'][0]['processingDetails']['processingStatus']         | succeeded
+| ['items'][0]['liveStreamingDetails']['actualStartTime']       | 2021-09-19T07:11:44Z
+| ['items'][0]['liveStreamingDetails']['actualEndTime']         | 2021-09-19T08:45:47Z
+|===
+
++++ <details><summary> +++
+View expected JSON response
++++ </summary><div> +++
+```json
+{
+  'kind': 'youtube#videoListResponse',
+  'etag': 'hyUgAogA9iuDDqykK79KcTMHFsU',
+  'items': [
+    {
+      'kind': 'youtube#video',
+      'etag': 'k5bwlOZ7xp9VIDPtaiTE8rQCP44',
+      'id': 'o2AagtlRFoE',
+      'snippet': {
+        'publishedAt': '2021-09-20T10: 21: 21Z',
+        'channelId': 'UCNshqh-axwENmUmHITY1stA',
+        'title': 'Den Kampf im Kopf  gewinnen - Freiheit im Kopf - Henning Krockow',
+        'description': 'Das Leben ist oft ein Kampf, aber wo genau findet dieser statt? Die meisten Schlachten werden in unserem Kopf geschlagen! In dieser Serie geht es darum, einen gesunden und gewinnbringenden Weg zu finden, mit den eigenen Gedanken und Gefühlen umzugehen. Es ist Zeit unser Denken zu erneuern, damit Gott unser Leben verändern kann.\n\nPredigt vom 19.9.2021 Freiheit im Kopf| Henning Krockow\n\nMehr Infos über ICF Karlsruhe unter: \nhttps: //www.icf-karlsruhe.de',
+        'thumbnails': {
+          'default': {
+            'url': 'https://i.ytimg.com/vi/o2AagtlRFoE/default.jpg',
+            'width': 120,
+            'height': 90
+          },
+          'medium': {
+            'url': 'https://i.ytimg.com/vi/o2AagtlRFoE/mqdefault.jpg',
+            'width': 320,
+            'height': 180
+          },
+          'high': {
+            'url': 'https://i.ytimg.com/vi/o2AagtlRFoE/hqdefault.jpg',
+            'width': 480,
+            'height': 360
+          },
+          'standard': {
+            'url': 'https://i.ytimg.com/vi/o2AagtlRFoE/sddefault.jpg',
+            'width': 640,
+            'height': 480
+          },
+          'maxres': {
+            'url': 'https://i.ytimg.com/vi/o2AagtlRFoE/maxresdefault.jpg',
+            'width': 1280,
+            'height': 720
+          }
+        },
+        'channelTitle': 'ICF Karlsruhe',
+        'categoryId': '29',
+        'liveBroadcastContent': 'none',
+        'defaultLanguage': 'de',
+        'localized': {
+          'title': 'Den Kampf im Kopf  gewinnen - Freiheit im Kopf - Henning Krockow',
+          'description': 'Das Leben ist oft ein Kampf, aber wo genau findet dieser statt? Die meisten Schlachten werden in unserem Kopf geschlagen! In dieser Serie geht es darum, einen gesunden und gewinnbringenden Weg zu finden, mit den eigenen Gedanken und Gefühlen umzugehen. Es ist Zeit unser Denken zu erneuern, damit Gott unser Leben verändern kann.\n\nPredigt vom 19.9.2021 Freiheit im Kopf| Henning Krockow\n\nMehr Infos über ICF Karlsruhe unter: \nhttps://www.icf-karlsruhe.de'
+        },
+        'defaultAudioLanguage': 'de'
+      },
+      'contentDetails': {
+        'duration': 'PT36M25S',
+        'dimension': '2d',
+        'definition': 'hd',
+        'caption': 'false',
+        'licensedContent': False,
+        'contentRating': {},
+        'projection': 'rectangular',
+        'hasCustomThumbnail': True
+      },
+      'status': {
+        'uploadStatus': 'processed',
+        'privacyStatus': 'public',
+        'license': 'youtube',
+        'embeddable': True,
+        'publicStatsViewable': False,
+        'madeForKids': False
+      },
+      'processingDetails': {
+        'processingStatus': 'succeeded',
+        'fileDetailsAvailability': 'available',
+        'processingIssuesAvailability': 'available',
+        'tagSuggestionsAvailability': 'inProgress',
+        'editorSuggestionsAvailability': 'inProgress',
+        'thumbnailsAvailability': 'available'
+      },
+      'liveStreamingDetails': {
+        'actualStartTime': '2021-09-19T07:11:44Z',
+        'actualEndTime': '2021-09-19T08:45:47Z',
+        'scheduledStartTime': '2021-09-19T07:11:02Z'
+      }
+    }
+  ],
+  'pageInfo': {
+    'totalResults': 1,
+    'resultsPerPage': 1
+  }
+}
+```
++++ </div></details> +++
