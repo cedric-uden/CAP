@@ -29,8 +29,11 @@ class MP3Downloader:
             self.verify_command_output(cmd_output)
 
     def build_youtubedl_command(self, video_id):
-        return f"{self.settings.get_youtubedl_path()} --extract-audio " \
-               f"--audio-format mp3 {video_id}"
+        return f"{self.settings.get_youtubedl_path()} " \
+               f"--extract-audio " \
+               f"--audio-format mp3 " \
+               f"-o downloads/%(upload_date)s-%(id)s.%(ext)s " \
+               f"https://www.youtube.com/watch?v={video_id}"
 
     def run_cmd(self, run_this_cmd):
         self._logger.info(f"Running youtube-dl with command: {run_this_cmd}")
