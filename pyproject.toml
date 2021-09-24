@@ -5,10 +5,8 @@ description = ""
 authors = ["Cédric Uden <cedric@uden.de>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
-google-api-python-client = "^2.22.0"
-google-auth-oauthlib = "^0.4.6"
-Flask = "^2.0.1"
+python = "^3.8"
+requests = "^2.26.0"
 
 [tool.poetry.dev-dependencies]
 
