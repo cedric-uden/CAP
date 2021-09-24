@@ -5,4 +5,4 @@ from src.mp3download.MP3Downloader import MP3Downloader
 log.setup(stream_level=log.INFO)
 
 # YouTubeInformation().update()
-MP3Downloader()
+MP3Downloader().download()
