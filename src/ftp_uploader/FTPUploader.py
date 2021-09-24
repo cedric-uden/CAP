@@ -1,11 +1,13 @@
 import src.logs.Logging as log
 from src.constants.Constants import SecretConstants, SettingConstants
 from src.utils.PersistVideoInformation import PersistVideoInformation
+from src.utils.FilenameSanitizer import FilenameSanitizer
 from src.business.YouTubeVideoStates import YouTubeVideoStates as state
 
 import ftplib
 import os
 
+DOWNLOAD_FOLDER = "downloads"
 
 class FTPUploader:
     _logger = log.get_logger(__name__)
@@ -27,7 +29,7 @@ class FTPUploader:
                                    f"to be uploaded to FTP.")
 
     def match_ids_to_files(self):
-        all_files = os.listdir('downloads/')
+        all_files = os.listdir(DOWNLOAD_FOLDER)
         for file in all_files:
             if file != ".gitkeep":
                 file_split = file.split("-")
@@ -54,7 +56,7 @@ class FTPUploader:
         session.login(user, pw)
 
         local_filename = self.all_files_dict.get(video_id)
-        local_filepath = f"downloads/{local_filename}"
+        local_filepath = f"{DOWNLOAD_FOLDER}/{local_filename}"
         file = open(local_filepath, 'rb')
         filepath_on_ftp = f"{self.ftp_path}/{local_filename}"
         session.storbinary(f"STOR {filepath_on_ftp}", file)
