@@ -20,6 +20,7 @@ their ID.
 
 ```
 brew install youtube-dl
+apt-get install youtube-dl
 youtube-dl --extract-audio --audio-format mp3 <video-id>
 ```
 
