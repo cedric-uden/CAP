@@ -4,5 +4,6 @@
   "podcast_min_duration": 20,
   "podcast_max_duration": 60,
   "youtubedl_path": "/usr/local/bin/youtube-dl",
+  "ftp_path": "genx",
   "time_format": "%Y-%m-%dT%H:%M:%SZ"
 }

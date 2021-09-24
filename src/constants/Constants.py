@@ -35,6 +35,9 @@ class SettingConstants:
     def get_youtubedl_path(self):
         return self.val.get_or_throw_error("youtubedl_path")
 
+    def get_ftp_path(self):
+        return self.val.get_or_throw_error("ftp_path")
+
 
 class SecretConstants:
 
