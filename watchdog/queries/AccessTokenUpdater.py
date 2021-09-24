@@ -54,7 +54,7 @@ class AccessTokenUpdater:
             "refresh_token": self.secrets.get_oauth_refresh_token(),
             "grant_type": "refresh_token"
         }
-        res = q().post(self.oauth_url, data)
+        res = q().post(self.oauth_url, data=data)
 
         if res.ok:
             self._logger.debug("Query was successful.")
