@@ -27,3 +27,9 @@ class PersistVideoInformation:
         file.close()
         self._logger.debug("Loaded the video information pickle file.")
         return dictionary
+
+    def update_video_information(self, key, value):
+        self._logger.debug(f"Updating key: '{key}' to value [{value}]")
+        video_information = self.get_video_information()
+        video_information[key] = value
+        self.store_video_information(video_information)
