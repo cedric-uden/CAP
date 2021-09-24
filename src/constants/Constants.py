@@ -32,6 +32,9 @@ class SettingConstants:
     def get_podcast_max_duration(self):
         return self.val.get_or_throw_error("podcast_max_duration")
 
+    def get_youtubedl_path(self):
+        return self.val.get_or_throw_error("youtubedl_path")
+
 
 class SecretConstants:
 
