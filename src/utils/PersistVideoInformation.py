@@ -1,5 +1,5 @@
 import pickle
-from src.constants.ConstantsPaths import video_information_pickle_path
+from src.constants.ConstantsPaths import video_states_pickle_path
 import src.logs.Logging as log
 
 
@@ -11,13 +11,13 @@ class PersistVideoInformation:
         pass
 
     def store_video_state(self, dictionary):
-        file = open(video_information_pickle_path, 'wb')
+        file = open(video_states_pickle_path, 'wb')
         pickle.dump(dictionary, file)
         file.close()
         self._logger.debug("Wrote video information pickle file.")
 
     def get_video_state(self):
-        file = open(video_information_pickle_path, 'rb')
+        file = open(video_states_pickle_path, 'rb')
         dictionary = {}
         try:
             dictionary = pickle.load(file)
