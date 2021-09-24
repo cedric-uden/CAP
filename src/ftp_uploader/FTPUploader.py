@@ -28,6 +28,11 @@ class FTPUploader:
                 self._logger.debug(f"Found video {video_id} "
                                    f"to be uploaded to FTP.")
 
+    def sanitize_filenames(self):
+        all_files = os.listdir(DOWNLOAD_FOLDER)
+        for file in all_files:
+            FilenameSanitizer().clean_filename(f"{DOWNLOAD_FOLDER}/{file}")
+
     def match_ids_to_files(self):
         all_files = os.listdir(DOWNLOAD_FOLDER)
         for file in all_files:
@@ -37,6 +42,7 @@ class FTPUploader:
                 self.all_files_dict.update({video_id_from_file: file})
 
     def upload(self):
+        self.sanitize_filenames()
         self.match_ids_to_files()
         self.upload_files_in_set()
 
