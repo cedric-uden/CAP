@@ -26,7 +26,7 @@ class MP3Downloader:
         for video_id in self.videos_to_be_uploaded:
             cmd = self.build_youtubedl_command(video_id)
             cmd_output = self.run_cmd(cmd)
-            self.verify_command_output(cmd_output)
+            self.check_if_successfully_downloaded(cmd_output)
 
     def build_youtubedl_command(self, video_id):
         return f"{self.settings.get_youtubedl_path()} " \
@@ -40,5 +40,19 @@ class MP3Downloader:
         out = subprocess.run(run_this_cmd.split(" "), capture_output=True)
         return out.stdout.decode()
 
-    def verify_command_output(self, cmd_output):
-        self._logger.info(cmd_output)
+    def check_if_successfully_downloaded(self, cmd_output):
+        cmd_output_lines = cmd_output.split("\n")
+        downloaded_successfully = False
+
+        for line in cmd_output_lines:
+            if "[download] 100%" in line:
+                downloaded_successfully = True
+
+        if downloaded_successfully:
+            self._logger.debug("Successfully downloaded MP3.")
+        else:
+            self._logger.error(f"Could not download MP3. `youtube-dl` "
+                               f"output: {cmd_output}")
+
+        return downloaded_successfully
+
