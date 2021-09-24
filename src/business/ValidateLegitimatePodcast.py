@@ -18,12 +18,21 @@ class ValidateLegitimatePodcast:
     def validate_videos(self):
         for video_id in self.videos_to_be_processed:
             video_info = CheckYouTubeVideoInspector().get_json_from_youtube_id(video_id)
-            if self.valid_metadata(video_id, video_info) and self.valid_time(video_id, video_info):
-                self.update_video_state(video_id)
+            valid_metadata = self.valid_metadata(video_id, video_info)
+            valid_duration = self.valid_time(video_id, video_info)
+            if valid_metadata and valid_duration:
+                self._logger.info(f"Video '{video_id}' identified to be uploaded as MP3.")
+                self.update_video_state(video_id, state.TO_BE_DOWNLOADED)
+            elif valid_metadata and not valid_duration:
+                self._logger.warn(f"Video '{video_id}' was identified as "
+                                  f"not being a sermon.")
+                self.update_video_state(video_id, state.NOT_A_SERMON)
+            elif not valid_metadata and not valid_duration:
+                self._logger.error(f"Error identifying '{video_id}'")
 
-    def update_video_state(self, video_id):
-        self._logger.info(f"Video '{video_id}' identified to be uploaded as MP3.")
-        PersistVideoInformation().update_video_information(video_id, state.TO_BE_DOWNLOADED)
+    def update_state(self, key, value):
+        self._logger.debug(f"Going to update state for {key}")
+        PersistVideoInformation().update_video_information(key, value)
 
     def valid_metadata(self, video_id, video_info):
         cond1 = (video_info['items'][0]['status']['uploadStatus'] == "processed")
