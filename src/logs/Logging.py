@@ -1,4 +1,7 @@
 import logging
+import uuid
+
+process_uuid = str(uuid.uuid4())
 
 
 CRITICAL = logging.CRITICAL
@@ -28,7 +31,7 @@ def setup(stream_level=logging.WARNING, file_level=logging.DEBUG, file_postfix='
 
     # create formatter and add it to the handlers
     formatter = logging.Formatter(
-        '%(asctime)s - %(name)s - %(funcName)s - %(levelname)s - %(message)s')
+        f'%(asctime)s - {process_uuid} - %(name)s - %(funcName)s - %(levelname)s - %(message)s')
     fh.setFormatter(formatter)
     ch.setFormatter(formatter)
 
