@@ -35,3 +35,27 @@ class FTPUploader:
 
     def upload(self):
         self.match_ids_to_files()
+        self.upload_files_in_set()
+
+    def upload_files_in_set(self):
+        for video_id in self.videos_to_be_uploaded:
+            self.upload_this_file(video_id)
+
+    def upload_this_file(self, video_id):
+        server = self.ftp_info['server']
+        port = self.ftp_info['port']
+        user = self.ftp_info['user']
+        pw = self.ftp_info['password']
+
+        self._logger.debug(f"Attempting to upload {video_id} to FTP")
+        session = ftplib.FTP(server, user, pw)
+
+        local_filename = self.all_files_dict.get(video_id)
+        local_filepath = f"downloads/{local_filename}"
+        file = open(local_filepath, 'rb')
+        filepath_on_ftp = f"{self.ftp_path}/{local_filename}"
+        session.storbinary(f"STOR {filepath_on_ftp}", file)
+        file.close()
+        session.quit()
+        self._logger.info(f"Uploaded {video_id} to FTP")
+
