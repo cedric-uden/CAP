@@ -3,4 +3,4 @@ from watchdog.queries.MostRecentYouTubeVideos import MostRecentYouTubeVideos
 
 log.setup(stream_level=log.INFO)
 
-print(MostRecentYouTubeVideos().get_json())
+print(str(MostRecentYouTubeVideos().get_json()))

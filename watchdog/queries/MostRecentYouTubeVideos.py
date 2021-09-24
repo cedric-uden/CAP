@@ -17,11 +17,12 @@ class MostRecentYouTubeVideos:
 
     def get_json(self):
         res = self.exec_query()
-        return res.json()
+        res_json = res.json()
+        return res_json
 
     def exec_query(self):
         url, params, headers = self.build_query()
-        return q().post(url, params=params, data=headers)
+        return q().http_get(url, params=params, headers=headers)
 
     def build_query(self):
         url = f"{self.set_const.get_youtube_data_api_url()}/activities"
@@ -32,7 +33,6 @@ class MostRecentYouTubeVideos:
         }
         headers = {
             'Authorization': f"Bearer {self.token.id}",
-            'Accept': 'application/json',
-            'User-Agent': 'curl/7.68.0'
+            'Accept': 'application/json'
         }
         return url, params, headers
