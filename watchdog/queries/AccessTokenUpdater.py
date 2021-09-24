@@ -32,8 +32,9 @@ class AccessTokenUpdater:
 
     def create_dict_entry_from_http_result(self, res):
         current_time = get_current_time_string()
+        res_json = res.json()
         dictionary = {
-                "id": res.text['access_token'],
+                "id": res_json['access_token'],
                 "date": current_time
 
         }
