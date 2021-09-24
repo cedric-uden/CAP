@@ -12,10 +12,12 @@ class YouTubeInformation:
     def __init__(self):
         self.all_video_ids = set()
         self.vid_info = PersistVideoInformation().get_video_information()
+        self.videos_to_be_processed = set()
 
     def get_info(self):
         self.get_most_recent_yt_video_ids()
         self.add_new_videos_to_video_information_set()
+        self.check_videos_to_be_identified()
 
     def get_most_recent_yt_video_ids(self):
         all_videos = MostRecentYouTubeVideos().get_json()
@@ -33,7 +35,13 @@ class YouTubeInformation:
         for video in self.all_video_ids:
             if not self.is_video_in_video_information_set(video):
                 self.vid_info.update({video: state.NEW})
-                self._logger.debug(f"Added video {video} to the information set.")
+                self._logger.debug(f"Added video '{video}' to the information set.")
                 PersistVideoInformation().store_video_information(self.vid_info)
             else:
-                self._logger.debug(f"Video {video} was found in the video information set.")
+                self._logger.debug(f"Video '{video}' was found in the video information set.")
+
+    def check_videos_to_be_identified(self):
+        for video, status in self.vid_info.items():
+            if status is state.NEW:
+                self.videos_to_be_processed.add(video)
+                self._logger.debug(f"Video '{video}' needs to be identified.")
