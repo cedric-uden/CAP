@@ -22,11 +22,11 @@ class ValidateLegitimatePodcast:
             valid_duration = self.valid_time(video_id, video_info)
             if valid_metadata and valid_duration:
                 self._logger.info(f"Video '{video_id}' identified to be uploaded as MP3.")
-                self.update_video_state(video_id, state.TO_BE_DOWNLOADED)
+                self.update_state(video_id, state.TO_BE_DOWNLOADED)
             elif valid_metadata and not valid_duration:
                 self._logger.warn(f"Video '{video_id}' was identified as "
                                   f"not being a sermon.")
-                self.update_video_state(video_id, state.NOT_A_SERMON)
+                self.update_state(video_id, state.NOT_A_SERMON)
             elif not valid_metadata and not valid_duration:
                 self._logger.error(f"Error identifying '{video_id}'")
 
