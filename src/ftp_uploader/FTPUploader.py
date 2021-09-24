@@ -16,7 +16,7 @@ class FTPUploader:
     def __init__(self):
         self.ftp_path = SettingConstants().get_ftp_path()
         self.ftp_info = SecretConstants().get_ftp_dict()
-        self.all_videos = PersistVideoInformation().get_video_information()
+        self.all_videos = PersistVideoInformation().get_video_state()
         self.videos_to_be_uploaded = set()
         self.all_files_dict = {}
 
@@ -77,5 +77,5 @@ class FTPUploader:
 
     def update_state(self, key, value):
         self._logger.debug(f"Going to update state for {key}")
-        PersistVideoInformation().update_video_information(key, value)
+        PersistVideoInformation().update_video_state(key, value)
 

@@ -11,7 +11,7 @@ class YouTubeInformation:
 
     def __init__(self):
         self.all_video_ids = set()
-        self.vid_info = PersistVideoInformation().get_video_information()
+        self.vid_info = PersistVideoInformation().get_video_state()
         self.videos_to_be_processed = set()
 
     def update(self):
@@ -37,7 +37,7 @@ class YouTubeInformation:
             if not self.is_video_in_video_information_set(video):
                 self.vid_info.update({video: state.NEW})
                 self._logger.debug(f"Added video '{video}' to the information set.")
-                PersistVideoInformation().store_video_information(self.vid_info)
+                PersistVideoInformation().store_video_state(self.vid_info)
             else:
                 self._logger.debug(f"Video '{video}' was found in the video "
                                    f"information set. State is set to "

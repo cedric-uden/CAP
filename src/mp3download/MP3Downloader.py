@@ -10,7 +10,7 @@ class MP3Downloader:
     _logger = log.get_logger(__name__)
 
     def __init__(self):
-        self.all_video_information = PersistVideoInformation().get_video_information()
+        self.all_video_information = PersistVideoInformation().get_video_state()
         self.videos_to_be_uploaded = set()
         self.settings = SettingConstants()
         self.check_videos_to_be_uploaded()
@@ -63,4 +63,4 @@ class MP3Downloader:
 
     def update_state(self, key, value):
         self._logger.debug(f"Going to update state for {key}")
-        PersistVideoInformation().update_video_information(key, value)
+        PersistVideoInformation().update_video_state(key, value)

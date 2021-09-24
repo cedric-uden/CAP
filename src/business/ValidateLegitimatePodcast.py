@@ -32,7 +32,7 @@ class ValidateLegitimatePodcast:
 
     def update_state(self, key, value):
         self._logger.debug(f"Going to update state for {key}")
-        PersistVideoInformation().update_video_information(key, value)
+        PersistVideoInformation().update_video_state(key, value)
 
     def valid_metadata(self, video_id, video_info):
         cond1 = (video_info['items'][0]['status']['uploadStatus'] == "processed")
