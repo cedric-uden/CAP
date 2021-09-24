@@ -1,4 +1,5 @@
 {
   "oauth_url": "https://accounts.google.com/o/oauth2/token",
+  "youtube_data_api_url": "https://youtube.googleapis.com/youtube/v3",
   "time_format": "%Y-%m-%dT%H:%M:%SZ"
 }
