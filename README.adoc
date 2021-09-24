@@ -18,10 +18,30 @@ Works via YouTube API and checks if any new videos have been uploaded.
 Works on the server which then proceeds to download sermons to mp3 based on
 their ID.
 
+==== Usage
+
+Last tested on version `2021.06.06`
+
+```
+youtube-dl --version
+youtube-dl --extract-audio --audio-format mp3 <video-id>
+```
+
+==== Installation
+
+===== By package manager
+
 ```
 brew install youtube-dl
 apt-get install youtube-dl
-youtube-dl --extract-audio --audio-format mp3 <video-id>
+```
+
+===== Manually - be sure to get the latest version
+
+```
+sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+sudo chmod a+rx /usr/local/bin/youtube-dl
+
 ```
 
 === Upload to FTP
