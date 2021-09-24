@@ -23,6 +23,9 @@ class SettingConstants:
     def get_time_format(self):
         return self.val.get_or_throw_error("time_format")
 
+    def get_youtube_data_api_url(self):
+        return self.val.get_or_throw_error("youtube_data_api_url")
+
 
 class SecretConstants:
 
