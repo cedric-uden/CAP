@@ -1,11 +1,10 @@
 import src.logs.Logging as log
 from src.constants.Constants import SecretConstants, SettingConstants
 from src.utils.PersistVideoInformation import PersistVideoInformation
-from src.utils.FilenameSanitizer import FilenameSanitizer
+from src.ftp_uploader.FilenameGenerator import FilenameGenerator
 from src.business.YouTubeVideoStates import YouTubeVideoStates as state
 
 import ftplib
-import os
 
 DOWNLOAD_FOLDER = "downloads"
 
@@ -58,10 +57,11 @@ class FTPUploader:
 
         self._logger.debug(f"Attempting to upload {video_id} to FTP")
 
-        local_filename = self.all_files_dict.get(video_id)
+        local_filename = f"{video_id}.mp3"
         local_filepath = f"{DOWNLOAD_FOLDER}/{local_filename}"
         file = open(local_filepath, 'rb')
-        filepath_on_ftp = f"{self.ftp_path}/{local_filename}"
+        final_filename = FilenameGenerator(video_id).get_filename()
+        filepath_on_ftp = f"{self.ftp_path}/{final_filename}"
         session.storbinary(f"STOR {filepath_on_ftp}", file)
         file.close()
         session.quit()
