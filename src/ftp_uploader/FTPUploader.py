@@ -32,22 +32,7 @@ class FTPUploader:
         if len(self.videos_to_be_uploaded) == 0:
             self._logger.info("No podcasts to be uploaded to FTP found.")
 
-    def sanitize_filenames(self):
-        all_files = os.listdir(DOWNLOAD_FOLDER)
-        for file in all_files:
-            FilenameSanitizer().clean_filename(f"{DOWNLOAD_FOLDER}/{file}")
-
-    def match_ids_to_files(self):
-        all_files = os.listdir(DOWNLOAD_FOLDER)
-        for file in all_files:
-            if file != ".gitkeep":
-                file_split = file.split("-")
-                video_id_from_file = file_split[1]
-                self.all_files_dict.update({video_id_from_file: file})
-
     def upload(self):
-        self.sanitize_filenames()
-        self.match_ids_to_files()
         self.upload_files_in_set()
 
     def upload_files_in_set(self):
