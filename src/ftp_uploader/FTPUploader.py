@@ -55,16 +55,23 @@ class FTPUploader:
             self.upload_this_file(video_id)
             self.update_state(video_id, state.UPLOADED)
 
-    def upload_this_file(self, video_id):
+    def open_and_return_FTP_session(self):
         server = self.ftp_info['server']
         port = self.ftp_info['port']
         user = self.ftp_info['user']
         pw = self.ftp_info['password']
 
-        self._logger.debug(f"Attempting to upload {video_id} to FTP")
+        self._logger.debug(f"Connecting to FTP Server {server} at port {port} with user {user}.")
         session = ftplib.FTP()
         session.connect(server, port)
         session.login(user, pw)
+        return session
+
+    def upload_this_file(self, video_id):
+
+        session = self.open_and_return_FTP_session()
+
+        self._logger.debug(f"Attempting to upload {video_id} to FTP")
 
         local_filename = self.all_files_dict.get(video_id)
         local_filepath = f"{DOWNLOAD_FOLDER}/{local_filename}"
