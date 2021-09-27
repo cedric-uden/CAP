@@ -20,9 +20,9 @@ class FTPUploader:
         self.videos_to_be_uploaded = set()
         self.all_files_dict = {}
 
-        self.get_files_to_upload()
+        self.get_youtube_ids_to_upload()
 
-    def get_files_to_upload(self):
+    def get_youtube_ids_to_upload(self):
         for video_id, status in self.all_videos.items():
             if status == state.DOWNLOADED_NOT_UPLOADED:
                 self.videos_to_be_uploaded.add(video_id)
