@@ -55,7 +55,7 @@ class FTPUploader:
 
         session = self.open_and_return_FTP_session()
 
-        self._logger.debug(f"Attempting to upload {video_id} to FTP")
+        self._logger.info(f"Attempting to upload {video_id} to FTP")
 
         local_filename = f"{video_id}.mp3"
         local_filepath = f"{DOWNLOAD_FOLDER}/{local_filename}"
