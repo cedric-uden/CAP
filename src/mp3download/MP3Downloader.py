@@ -37,7 +37,7 @@ class MP3Downloader:
                f"--extract-audio " \
                f"--audio-format mp3 " \
                f"--audio-quality 0 " \
-               f"-o downloads/%(upload_date)s-%(id)s-%(title)s.%(ext)s " \
+               f"-o downloads/%(id)s.%(ext)s " \
                f"https://www.youtube.com/watch?v={video_id}"
 
     def run_cmd(self, run_this_cmd):
