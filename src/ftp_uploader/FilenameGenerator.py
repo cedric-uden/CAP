@@ -21,6 +21,11 @@ class FilenameGenerator:
         youtube_title = self.get_title()
         youtube_title = FilenameSanitizer().clean_filename(youtube_title)
         final_filename = f"{youtube_date}-{self.video_id}-{youtube_title}.mp3"
+        final_filename_length = len(final_filename)
+        if final_filename_length > 255:
+            final_filename = f"{youtube_date}-{self.video_id}.mp3"
+            self._logger.warn(f"Filename would have been {final_filename_length}. "
+                              f"Omitted the title from the filename.")
         return final_filename
 
     def get_date(self):
