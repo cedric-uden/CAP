@@ -1,3 +1,19 @@
+class CurrentState {
+    constructor() {
+        this.all_entries = false;
+        this.debug_output = false;
+    }
+}
+
+let state = new CurrentState();
+
+function switch_to_state_ALL_ENTRIES() {
+    state.all_entries = true;
+    update();
+}
+
+
+
 function readFile() {
     let file = "/cap.log";
     let f = new XMLHttpRequest();
@@ -144,7 +160,10 @@ function get_logs_from_most_recent_uuid(text_array) {
     return out_array;
 }
 
-function prepare_log_output() {
+function log_output_user() {
+    state.debug_output = false;
+    state.all_entries = false;
+
     let text = readFile();
     let text_array = return_split_on_lines(text);
 
@@ -157,6 +176,23 @@ function prepare_log_output() {
     document.getElementById("log-div").innerHTML = output;
 }
 
-function update_log_div() {
-    prepare_log_output();
+function log_output_all_entries() {
+    let text = readFile();
+    let text_array = return_split_on_lines(text);
+
+    text_array = reverse_array(text_array);
+    text_array = prepare_log_levels(text_array);
+
+    text_array = user_log_output(text_array);
+    let output = put_array_into_string(text_array);
+    document.getElementById("log-div").innerHTML = output;
+}
+
+
+function update() {
+    if (state.all_entries && !state.debug_output) {
+        log_output_all_entries();
+    } else {
+        log_output_user();
+    }
 }

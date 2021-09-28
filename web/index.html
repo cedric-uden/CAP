@@ -25,10 +25,10 @@
          style="padding-top: 20px">
 
         <div class="col-2">
-            <button type="button" class="btn btn-primary">Alle Einträge</button>
+            <button type="button" class="btn btn-primary" onclick="switch_to_state_ALL_ENTRIES()">Alle Einträge</button>
         </div>
         <div class="col-2" style="text-align: center">
-            <button type="button" class="btn btn-primary">Aktualisieren</button>
+            <button type="button" class="btn btn-primary" onclick="update()">Aktualisieren</button>
         </div>
         <div class="col-2" style="text-align: right">
             <button type="button" class="btn btn-secondary">Alle Ausgaben</button>
@@ -47,7 +47,7 @@
 <script src="js/log_manipulation.js"></script>
 
 <script>
-    update_log_div();
+    log_output_user();
 </script>
 
 
