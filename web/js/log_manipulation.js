@@ -7,8 +7,14 @@ class CurrentState {
 
 let state = new CurrentState();
 
-function switch_to_state_ALL_ENTRIES() {
-    state.all_entries = true;
+function toggle_state_ALL_ENTRIES() {
+    if (state.all_entries) {
+        document.getElementById("all_entries_btn").innerHTML = "Alle Einträge";
+    } else {
+        document.getElementById("all_entries_btn").innerHTML = "Neusten Einträge";
+    }
+    state.all_entries = !state.all_entries;
+
     update();
 }
 
