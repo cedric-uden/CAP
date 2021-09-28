@@ -89,10 +89,12 @@
         return text_array;
     }
 
-    function omit_uuids(text_array) {
+    function user_log_output(text_array) {
 
         let log_props = new LogProps();
         log_props.uuid = false;
+        log_props.module = false;
+        log_props.func = false;
         return return_log_line_with_these_characteristics(text_array, log_props);
 
     }
@@ -144,7 +146,7 @@
         let text_array = return_split_on_lines(text);
         text_array = prepare_log_levels(text_array);
 
-        text_array = omit_uuids(text_array);
+        text_array = user_log_output(text_array);
         let output = put_array_into_string(text_array);
         document.getElementById("log-div").innerHTML = output;
     }
