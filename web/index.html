@@ -34,7 +34,26 @@
         return res;
     }
 
-    document.getElementById("log-div").innerHTML = readFile();
+    function return_split_on_lines(text) {
+        return text.split("\n");
+    }
+
+    function return_split_on_logs(line) {
+        return line.split(" - ");
+    }
+
+    function prepare_log_output() {
+        let text = readFile();
+        let text_array = return_split_on_lines(text);
+        let line = return_split_on_logs(text_array[2]);
+        document.getElementById("log-div").innerHTML = line[0];
+    }
+
+    function update_log_div() {
+        prepare_log_output();
+    }
+
+    update_log_div();
 
 </script>
 
