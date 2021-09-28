@@ -11,9 +11,23 @@
 
 <body>
 
-<div class="main-row">
-    <iframe class="responsive-iframe" src="../cap.log"></iframe>
+
+
+<div class="main-row" id="row1">
+<!--    <iframe id="log" class="responsive-iframe" src="../cap.log"></iframe>-->
+    <div class="container" id="la"></div>
 </div>
+
+<script>
+
+    function foo() {
+        return "Hello World";
+    }
+
+    document.getElementById("la").innerHTML=foo();
+
+</script>
+
 
 </body>
 </html>
