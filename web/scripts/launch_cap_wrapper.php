@@ -8,5 +8,5 @@
 // make sure the permissions are set to `chown -R www-data:www-data *`
 // inside the `/var/www/html` directory
 
-$out =  exec('./launch_cap.sh');
+$out =  shell_exec('sudo /var/www/html/scripts/launch_cap.sh');
 ?>
