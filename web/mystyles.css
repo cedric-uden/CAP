@@ -13,4 +13,5 @@
     left: 1%;
     top: 3%;
     overflow-y: scroll;
+    white-space: pre;
 }
