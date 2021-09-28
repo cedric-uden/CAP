@@ -31,7 +31,7 @@
             <button type="button" class="btn btn-primary" onclick="update()">Aktualisieren</button>
         </div>
         <div class="col-2" style="text-align: right">
-            <button type="button" class="btn btn-secondary">Alle Ausgaben</button>
+            <button type="button" id="full_debug_btn" class="btn btn-secondary" onclick="toggle_state_DEBUG_OUTPUT()">Detailierte Ausgaben</button>
         </div>
     </div>
 
@@ -47,7 +47,7 @@
 <script src="js/log_manipulation.js"></script>
 
 <script>
-    log_output_user();
+    update();
 </script>
 
 

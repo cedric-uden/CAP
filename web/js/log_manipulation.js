@@ -18,6 +18,16 @@ function toggle_state_ALL_ENTRIES() {
     update();
 }
 
+function toggle_state_DEBUG_OUTPUT() {
+    if (state.debug_output) {
+        document.getElementById("full_debug_btn").innerHTML = "Detailierte Ausgaben";
+    } else {
+        document.getElementById("full_debug_btn").innerHTML = "Einfache Ausgaben";
+    }
+    state.debug_output = !state.debug_output;
+
+    update();
+}
 
 
 function readFile() {
@@ -166,39 +176,26 @@ function get_logs_from_most_recent_uuid(text_array) {
     return out_array;
 }
 
-function log_output_user() {
-    state.debug_output = false;
-    state.all_entries = false;
+function log_output() {
 
     let text = readFile();
     let text_array = return_split_on_lines(text);
 
-    text_array = get_logs_from_most_recent_uuid(text_array);
+    if (!state.all_entries) {
+        text_array = get_logs_from_most_recent_uuid(text_array);
+    }
     text_array = reverse_array(text_array);
-    text_array = prepare_log_levels(text_array);
 
-    text_array = user_log_output(text_array);
-    let output = put_array_into_string(text_array);
-    document.getElementById("log-div").innerHTML = output;
-}
+    if (!state.debug_output) {
+        text_array = prepare_log_levels(text_array);
+        text_array = user_log_output(text_array);
+    }
 
-function log_output_all_entries() {
-    let text = readFile();
-    let text_array = return_split_on_lines(text);
-
-    text_array = reverse_array(text_array);
-    text_array = prepare_log_levels(text_array);
-
-    text_array = user_log_output(text_array);
     let output = put_array_into_string(text_array);
     document.getElementById("log-div").innerHTML = output;
 }
 
 
 function update() {
-    if (state.all_entries && !state.debug_output) {
-        log_output_all_entries();
-    } else {
-        log_output_user();
-    }
+    log_output();
 }
