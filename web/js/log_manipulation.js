@@ -161,7 +161,6 @@ function get_most_recent_uuid(text_array) {
     let text_array_length = text_array.length;
     let last_entry_line = text_array[text_array_length - 1];
     let last_uuid = return_split_on_logs(last_entry_line)[1];
-    console.log(last_uuid);
     return last_uuid
 }
 
