@@ -199,3 +199,11 @@ function log_output() {
 function update() {
     log_output();
 }
+
+function run_cap() {
+    let req = new XMLHttpRequest();
+    let url = "scripts/launch_cap_wrapper.php";
+    req.open("POST", url);
+    req.send();
+}
+
