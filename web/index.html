@@ -61,6 +61,16 @@
         }
     }
 
+    class LogLevels {
+        constructor() {
+            this.dbg = false;
+            this.info = true;
+            this.warn = false;
+            this.error = true;
+            this.critical = true;
+        }
+    }
+
     function return_log_line_with_these_characteristics(text_array, log_props) {
         for (let i in text_array) {
             let l = return_split_on_logs(text_array[i]);
@@ -87,9 +97,53 @@
 
     }
 
+    function omit_log_levels(text_array, log_levels) {
+
+        let out_array = [];
+
+        for (let i in text_array) {
+
+            if (log_levels.dbg) {
+                if (text_array[i].includes(" - DEBUG - ")) {
+                    out_array.push(text_array[i]);
+                }
+            }
+            if (log_levels.info) {
+                if (text_array[i].includes(" - INFO - ")) {
+                    out_array.push(text_array[i]);
+                }
+            }
+            if (log_levels.warn) {
+                if (text_array[i].includes(" - WARNING - ")) {
+                    out_array.push(text_array[i]);
+                }
+            }
+            if (log_levels.error) {
+                if (text_array[i].includes(" - ERROR - ")) {
+                    out_array.push(text_array[i]);
+                }
+            }
+            if (log_levels.critical) {
+                if (text_array[i].includes(" - CRITICAL - ")) {
+                    out_array.push(text_array[i]);
+                }
+            }
+
+        }
+        return out_array;
+    }
+
+    function prepare_log_levels(text_array) {
+        let log_levels = new LogLevels();
+        text_array = omit_log_levels(text_array, log_levels);
+        return text_array;
+    }
+
     function prepare_log_output() {
         let text = readFile();
         let text_array = return_split_on_lines(text);
+        text_array = prepare_log_levels(text_array);
+
         text_array = omit_uuids(text_array);
         let output = put_array_into_string(text_array);
         document.getElementById("log-div").innerHTML = output;
