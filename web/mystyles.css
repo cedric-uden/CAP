@@ -14,4 +14,5 @@
     top: 3%;
     overflow-y: scroll;
     white-space: pre;
+    font-family:monospace;
 }
