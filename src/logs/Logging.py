@@ -11,20 +11,20 @@ INFO = logging.INFO
 DEBUG = logging.DEBUG
 
 
-project_prefix = 'cap'
+PROJECT_PREFIX = 'cap'
 WEBSERVER_PREFIX = 'web'
 
 
 def get_logger(name):
-    return logging.getLogger(f"{project_prefix}.{name}")
+    return logging.getLogger(f"{PROJECT_PREFIX}.{name}")
 
 
 def setup(stream_level=logging.WARNING, file_level=logging.DEBUG, file_postfix=''):
-    logger = logging.getLogger(project_prefix)
+    logger = logging.getLogger(PROJECT_PREFIX)
     logger.setLevel(logging.DEBUG)
 
     # create file handler which logs even debug messages
-    fh = logging.FileHandler(f"{WEBSERVER_PREFIX}/{project_prefix}{file_postfix}.log")
+    fh = logging.FileHandler(f"{WEBSERVER_PREFIX}/{PROJECT_PREFIX}{file_postfix}.log")
     fh.setLevel(file_level)
 
     ch = logging.StreamHandler()
