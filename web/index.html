@@ -50,9 +50,47 @@
         return string;
     }
 
+    class LogProps {
+        constructor() {
+            this.date = true;
+            this.uuid = true;
+            this.module = true;
+            this.func = true;
+            this.level = true;
+            this.msg = true;
+        }
+    }
+
+    function return_log_line_with_these_characteristics(text_array, log_props) {
+        for (let i in text_array) {
+            let l = return_split_on_logs(text_array[i]);
+
+            line = "";
+
+            if (log_props.date) line += l[0] + " | ";
+            if (log_props.uuid) line += l[1] + " | ";
+            if (log_props.module) line += l[2] + " | ";
+            if (log_props.func) line += l[3] + " | ";
+            if (log_props.level) line += l[4] + " | ";
+            if (log_props.msg) line += l[5] + " | ";
+
+            text_array[i] = line.slice(0, -3);
+        }
+        return text_array;
+    }
+
+    function omit_uuids(text_array) {
+
+        let log_props = new LogProps();
+        log_props.uuid = false;
+        return return_log_line_with_these_characteristics(text_array, log_props);
+
+    }
+
     function prepare_log_output() {
         let text = readFile();
         let text_array = return_split_on_lines(text);
+        text_array = omit_uuids(text_array);
         let output = put_array_into_string(text_array);
         document.getElementById("log-div").innerHTML = output;
     }
