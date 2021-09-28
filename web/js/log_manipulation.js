@@ -20,9 +20,9 @@ function toggle_state_ALL_ENTRIES() {
 
 function toggle_state_DEBUG_OUTPUT() {
     if (state.debug_output) {
-        document.getElementById("full_debug_btn").innerHTML = "Detailierte Ausgaben";
+        document.getElementById("full_debug_btn").innerHTML = "Detailierte Ausgabe";
     } else {
-        document.getElementById("full_debug_btn").innerHTML = "Einfache Ausgaben";
+        document.getElementById("full_debug_btn").innerHTML = "Einfache Ausgabe";
     }
     state.debug_output = !state.debug_output;
 
