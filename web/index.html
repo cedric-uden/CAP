@@ -13,20 +13,19 @@
 
 
 <div class="main-row" id="row1">
-<!--    <iframe id="log" class="responsive-iframe" src="../cap.log"></iframe>-->
-    <div class="container" id="la"></div>
+    <div class="log-div" id="log-div"></div>
 </div>
 
 <script>
 
     function readFile() {
-        let file = "/foo.txt";
+        let file = "/cap.log";
         let f = new XMLHttpRequest();
         let res = "";
         f.open("GET", file, false);
         f.onreadystatechange = function () {
             if (f.readyState === 4) {
-                if (f.status === 200 || f.status == 0) {
+                if (f.status === 200) {
                     res = f.responseText;
                 }
             }
@@ -35,7 +34,7 @@
         return res;
     }
 
-    document.getElementById("la").innerHTML = readFile();
+    document.getElementById("log-div").innerHTML = readFile();
 
 </script>
 

@@ -6,10 +6,11 @@
     left: 10%;
 }
 
-.responsive-iframe {
+.log-div {
     position: relative;
     width: 98%;
     height: 94%;
     left: 1%;
     top: 3%;
+    overflow-y: scroll;
 }
