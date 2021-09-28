@@ -12,7 +12,6 @@
 <body>
 
 
-
 <div class="main-row" id="row1">
 <!--    <iframe id="log" class="responsive-iframe" src="../cap.log"></iframe>-->
     <div class="container" id="la"></div>
@@ -20,11 +19,23 @@
 
 <script>
 
-    function foo() {
-        return "Hello World";
+    function readFile() {
+        let file = "/foo.txt";
+        let f = new XMLHttpRequest();
+        let res = "";
+        f.open("GET", file, false);
+        f.onreadystatechange = function () {
+            if (f.readyState === 4) {
+                if (f.status === 200 || f.status == 0) {
+                    res = f.responseText;
+                }
+            }
+        }
+        f.send(null);
+        return res;
     }
 
-    document.getElementById("la").innerHTML=foo();
+    document.getElementById("la").innerHTML = readFile();
 
 </script>
 
