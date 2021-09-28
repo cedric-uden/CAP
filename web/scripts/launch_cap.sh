@@ -14,4 +14,4 @@ cmd_export='export PYTHONPATH='${PYTHONPATH}':/'${cwd}${src}
 cmd_cd='cd '${cwd}
 cmd_eval='eval '${python}'" "'${src}${main}
 
-su -c "${cmd_export} && ${cmd_cd} && ${cmd_eval}" ${ced}
+su -c "${cmd_export} && ${cmd_cd} && ${cmd_eval}" ${run_user}
