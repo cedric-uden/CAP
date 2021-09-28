@@ -1,0 +1,10 @@
+.main-row {
+    background-color: beige;
+    height: 500px;
+}
+
+.responsive-iframe {
+    position: absolute;
+    width: 50%;
+    height: 500px;
+}
