@@ -141,9 +141,14 @@
         return text_array;
     }
 
+    function reverse_array(text_array) {
+        return text_array.reverse();
+    }
+
     function prepare_log_output() {
         let text = readFile();
         let text_array = return_split_on_lines(text);
+        text_array = reverse_array(text_array);
         text_array = prepare_log_levels(text_array);
 
         text_array = user_log_output(text_array);
